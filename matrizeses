@@ -1,0 +1,143 @@
+#include <iostream>
+#include <iomanip>
+#include <stdlib.h>
+#include <ctime>
+
+
+using namespace std;
+
+
+const int TAM=10;
+
+void armazenaM(int a[TAM][TAM], int n, int m);
+void printM(int a[TAM][TAM], int n, int m);
+void somaM(int a[TAM][TAM], int b[TAM][TAM], int n, int m, int n1, int m1);
+void multicarM(int a[TAM][TAM], int b[TAM][TAM], int n, int m, int n1, int m1);
+void transpostaM (int a[TAM][TAM], int n, int m);
+
+int main()
+{
+
+    srand(time(NULL));
+    int n, m, n1, m1;
+    cout << "Digite qnt de linhas e colunas da matriz A:";
+    cin >> n >> m;
+    cout << "Digite qnt de linhas e colunas da matriz B:";
+    cin >> n1 >> m1;
+    int arr[TAM][TAM], brr[TAM][TAM];
+    armazenaM(arr, n, m);
+    armazenaM(brr, n1, m1);
+    cout << " Matriz A:\n";
+    printM(arr, n, m);
+    cout << " Matriz B:\n";
+    printM(brr, n1, m1);
+    cout << " soma:\n";
+    somaM(arr, brr, n, m, n1, m1);
+    cout << " Multiplicacao:\n";
+    multicarM(arr, brr, n, m, n1, m1);
+    cout << " Transposta A:\n";
+    transpostaM(arr, n, m);
+    cout << " Transposta B:\n";
+    transpostaM(brr, n1, m1);
+
+    return 0;
+}
+void armazenaM(int a[TAM][TAM], int n, int m)
+{
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            cout << "Preencher a matriz"  << "[" << i << "]" <<"[" << j << "]: ";
+            a[i][j] = rand() % 10 + 1;
+            cout <<  a[i][j] << endl;
+        }
+    }
+}
+void printM(int a[TAM][TAM], int n, int m)
+{
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            cout << a[i][j] << " ";;
+        }
+        cout << '\n';
+    }
+}
+void somaM(int a[TAM][TAM], int b[TAM][TAM], int n, int m, int n1, int m1)
+{
+    int c[TAM][TAM];
+    if(n == n1 && m == m1){
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            c[i][j] = a[i][j] + b[i][j];
+        }
+    }
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            cout <<left<<setw(3)<< c[i][j] << " ";
+        }
+        cout << '\n';
+    }
+    }
+    else{
+        cout << "Nao e possivel realizar a soma! \n";
+    }
+
+}
+void multicarM(int a[TAM][TAM], int b[TAM][TAM], int n, int m, int n1, int m1)
+{
+    int c[n][m1] = {};
+    if(m == n1){
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m1; j++)
+        {
+            for(int k=0; k<n1; k++ )
+
+            {
+                c[i][j] += a[i][k]*b[k][j];
+            }
+        }
+    }
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m1; j++)
+        {
+            cout <<left<<setw(3)<< c[i][j] << " ";
+        }
+        cout << '\n';
+    }
+    }
+    else{
+        cout<< "Matrizes nao podem ser multiplicadas";
+    }
+
+}
+void transpostaM (int a[TAM][TAM], int n, int m)
+{
+    int c[m][n] = {};
+
+    for(int i=0; i<n; i++)
+    {
+        for(int j=0; j<m; j++)
+        {
+            c[j][i] = a[i][j];
+        }
+
+    }
+    for(int i=0; i<m; i++)
+    {
+        for(int j=0; j<n; j++)
+        {
+            cout <<left<<setw(3)<< c[i][j] << " ";
+        }
+        cout << '\n';
+    }
+
+}
