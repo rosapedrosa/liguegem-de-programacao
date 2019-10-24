@@ -1,0 +1,48 @@
+#include <iostream>
+#include <cstring>
+
+
+using namespace std;
+void mostra(char v[]);
+bool ehsub (char a[], char b[]);
+int main()
+{
+    char  a[] = "coargem";
+    char b[] = "ora";
+    mostra(a);
+    cout << '\n';
+    mostra(b);
+    cout << '\n';
+    cout << ehsub(a, b);
+
+    return 0;
+}
+
+void mostra(char v[])
+{
+    for(int i=0; v[i]; i++)
+    {
+        cout << v[i];
+    }
+}
+bool ehsub( char a[], char b[])
+{
+    int cont =0, m=0;
+    for(int i=0; b[i]; i++)
+    {
+        for(int j=m; a[j]; j++)
+        {
+            if(b[i] == a[j]){
+                m = j;
+                cont ++;
+                break;
+            }
+        }
+    }
+    if(strlen(b) == cont)
+        return true;
+    else
+        return false;
+}
+
+
