@@ -1,0 +1,77 @@
+#include <iostream>
+using namespace std;
+int fatorial(int a);
+int intervalo(int a, int b);
+int binario(int a);
+int digito(int a, int cont);
+bool primo(int a, int n);
+int inverte (int n);
+int main()
+{
+    int n, a, cont = 0;
+    cout << "Receba um numero:" << endl;
+    cin >> a;
+
+
+
+
+    //cout << "Fatorial:" << fatorial(a);
+    //cout << "Soma do intervalo [a, n]:" << intervalo(a, b);
+    //cout << "binario:" << binario(a);
+    //cout << "qnt de digito:" << digito(a, cont);
+    //cout << "Primo:" << primo(a-1, a);
+    //cout << "Invertido:" << inverte(a);
+    return 0;
+}
+int fatorial(int a)
+{
+    if(a == 1 || a == 0)
+        return 1;
+    return a * fatorial(a-1);
+}
+int intervalo(int a, int b)
+{
+    if(a == b)
+        return b;
+
+    return a + intervalo(a + 1, b                                          );
+}
+int digito(int a, int cont)
+{
+    if(a == 0)
+        return 0;
+    return cont + digito(a/10, cont++);
+}
+int binario(int a)
+{
+    if(a == 0)
+        return 0;
+    return a%2 + 10*binario(a/2);
+
+}
+
+int inverte (int n)
+{
+    if(n==0)
+        return 1;
+        
+    return n%10 * i  inverte(n/10);
+
+}
+
+
+bool primo (int a, int n)
+{
+
+    if(a==1)
+        return true;
+
+    if(n%a==0)
+        return false;
+
+    primo(a-1, n);
+
+
+
+
+}
