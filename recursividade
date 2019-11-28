@@ -87,3 +87,9 @@ int mdc(int n, int m, int aux) {
         return aux;
     return mdc(n, m, aux - 1);
 }
+
+int mmc(int n, int m, int aux) {
+    int md;
+    md = mdc(n, m, aux);
+    return (n * m) / md;
+}
