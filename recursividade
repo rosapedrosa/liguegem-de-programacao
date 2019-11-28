@@ -21,6 +21,7 @@ int main()
     //cout << "qnt de digito:" << digito(a, cont);
     //cout << "Primo:" << primo(a-1, a);
     //cout << "Invertido:" << inverte(a);
+    
     return 0;
 }
 int fatorial(int a)
@@ -74,4 +75,15 @@ bool primo (int a, int n)
 
 
 
+}
+int mdc(int n, int m, int aux) {
+    if (aux <= 1) {
+        if (n < m)
+            aux = n;
+        else
+            aux = m;
+    }
+    if (n % aux == 0 && m % aux == 0)
+        return aux;
+    return mdc(n, m, aux - 1);
 }
