@@ -7,7 +7,7 @@ void print(char a[]);
 bool ehsubstring(char a[], char b[]);
 int main()
 {
-    char a[] = "corgem";
+    char a[] = "coragem";
     char b[] = "ora";
     print(a);
     cout << '\n';
