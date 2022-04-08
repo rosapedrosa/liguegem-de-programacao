@@ -19,19 +19,15 @@ int main()
     cout << "Receba dois numero:" << endl;
     cin >> a >> n;
 
-
-
-
-    //cout << "Fatorial:" << fatorial(a);
-    //cout << "Soma do intervalo [a, n]:" << intervalo(a, b);
-    //cout << "MDC: " << mdc(a, n, cont);
-    //cout << "MMC: " << mmc(a, n, cont);
-    //cout << "binario:" << binario(a);
-    //cout << "qnt de digito:" << digito(a, cont);
-    //cout << "Invertido:" << inverte(a);
-    //cout << "Potencia: " << exp(a, m);
-    //cout << "Primo:" << primo(a-1, a);
-    
+    cout << "Fatorial de "<< a << ":"<< fatorial(a) << endl;
+    cout << "Soma do intervalo [a, n]:" << intervalo(a, n) << endl;
+    cout << "MDC: " << mdc(a, n, cont) << endl;
+    cout << "MMC: " << mmc(a, n, cont) << endl;
+    cout << "binario:" << binario(a) << endl;
+    cout << "qnt de digito:" << digito(a, cont) << endl;
+    cout << "Potencia: " << exp(a, n) << endl;
+    cout << "Primo:" << primo(a-1, a) << endl;
+    cout << "Invertido:" << inverte(a, n);
     
     return 0;
 }
